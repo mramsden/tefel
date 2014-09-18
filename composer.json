@@ -1,12 +1,19 @@
 {
     "name": "mramsden/tefel",
     "description": "Parses the station facilities feed from TFL to create a list of stations, with their location and the lines serving them.",
+    "version": "0.1.0",
+    "keywords": ["data", "feed", "london", "laravel", "underground"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Marcus Ramsden",
-            "email": "marcus.ramsden@gmail.com"
+            "email": "marcus.ramsden@gmail.com",
+            "role": "Developer"
         }
     ],
+    "support": {
+        "issues": "https://github.com/mramsden/tefel/issues"
+    },
     "require": {
         "php": ">=5.5.0",
         "illuminate/support": "4.2.*",
