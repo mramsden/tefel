@@ -5,7 +5,7 @@ A PHP package for parsing Transport for London (TFL) data feeds, includes suppor
 
 Currently there is only support for extracting station facilities data and line information.
 
-More information about the TFL Open Data feeds can be found at 
+More information about the TFL Open Data feeds can be found at
 [https://www.tfl.gov.uk/info-for/open-data-users/](https://www.tfl.gov.uk/info-for/open-data-users/).
 
 Usage
@@ -42,7 +42,7 @@ A facade is available for use in Laravel 4.
 ```php
 'aliases' => array(
   // ...
-  'Tefel' => 'Tefel\TefelServiceProvider',
+  'TFL' => 'Tefel\Facade\TefelFacade',
 ),
 ```
 
