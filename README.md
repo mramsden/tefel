@@ -1,6 +1,8 @@
 tefel
 =====
 
+[![Build Status](https://travis-ci.org/mramsden/tefel.svg?branch=master)](https://travis-ci.org/mramsden/tefel)
+
 A PHP package for parsing Transport for London (TFL) data feeds, includes support for Laravel 4.
 
 Currently there is only support for extracting station facilities data and line information.
