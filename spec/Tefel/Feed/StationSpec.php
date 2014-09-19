@@ -3,9 +3,11 @@
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use SimpleXMLElement;
+use spec\SpecHelper;
 
 class StationSpec extends ObjectBehavior
 {
+    use SpecHelper;
 
     function let()
     {
@@ -41,16 +43,6 @@ class StationSpec extends ObjectBehavior
 
         $this->getLines()->shouldHaveCount(1);
         $this->getLines()->shouldHaveValue('Piccadilly');
-    }
-
-    public function getMatchers()
-    {
-        return [
-            'haveValue' => function($subject, $value)
-            {
-                return in_array($value, $subject);
-            },
-        ];
     }
 
     private static $sampleXml = <<<SAMPLE_XML

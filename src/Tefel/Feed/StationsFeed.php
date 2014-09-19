@@ -34,12 +34,14 @@ class StationsFeed implements ArrayAccess, Countable {
 
     public function offsetExists($offset)
     {
-
+        $stations = $this->getStations();
+        return $stations[$offset];
     }
 
     public function offsetGet($offset)
     {
-
+        $stations = $this->getStations();
+        return $stations[$offset];
     }
 
     public function offsetSet($offset, $value)
@@ -88,7 +90,7 @@ class StationsFeed implements ArrayAccess, Countable {
         if ($this->stations == null) {
             $this->stations = array_map(function($stationElement)
             {
-                return new Station($stationElement);
+                return new Station(new SimpleXMLElement($stationElement->asXml()));
             }, $this->getFeed()->xpath('//station'));
         }
 

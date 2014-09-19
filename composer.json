@@ -21,6 +21,7 @@
     },
     "require-dev": {
         "phpspec/phpspec": "~2.0",
+        "benconstable/phpspec-laravel": "~1.0",
         "henrikbjorn/phpspec-code-coverage": "~0.2",
         "codeclimate/php-test-reporter": "dev-master"
     },
@@ -29,7 +30,8 @@
             "src/migrations"
         ],
         "psr-4": {
-            "Tefel\\": "src/Tefel"
+            "Tefel\\": "src/Tefel",
+            "spec\\": "spec"
         }
     },
     "minimum-stability": "stable"

@@ -4,6 +4,5 @@ extensions:
 code_coverage:
   format:
     - clover
-
   output:
     clover: build/logs/clover.xml
