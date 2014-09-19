@@ -12,7 +12,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/mramsden/tefel/issues"
+        "issues": "https://github.com/mramsden/tefel/issues",
+        "source": "https://github.com/mramsden/tefel"
     },
     "require": {
         "php": ">=5.5.0",
