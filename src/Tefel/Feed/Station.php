@@ -59,13 +59,13 @@ class Station {
         if (is_null($this->lines)) {
             $this->lines = array_map(function($servingLine)
             {
-                return $servingLine;
+                return (string) $servingLine;
             }, (array) $this->stationElement->xpath('//servingLines/servingLine'));
 
             if (empty($this->lines)) {
                 $this->lines = array_map(function($trainName)
                 {
-                    return trim($trainName);
+                    return trim((string) $trainName);
                 }, (array) $this->stationElement->xpath('//platformToTrain/trainName'));
                 $this->lines = array_unique($this->lines);
             }

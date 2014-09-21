@@ -87,7 +87,7 @@ class StationsFeed implements ArrayAccess, Countable, Iterator {
 
     public function valid()
     {
-        return offsetExists($this->key());
+        return $this->offsetExists($this->key());
     }
 
     /**
