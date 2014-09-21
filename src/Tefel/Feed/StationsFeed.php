@@ -3,9 +3,10 @@
 use ArrayAccess;
 use Countable;
 use Guzzle\Http\Client;
+use Iterator;
 use SimpleXMLElement;
 
-class StationsFeed implements ArrayAccess, Countable {
+class StationsFeed implements ArrayAccess, Countable, Iterator {
 
     /**
      * @var string
@@ -26,6 +27,11 @@ class StationsFeed implements ArrayAccess, Countable {
      * @var Guzzle\Http\Client
      */
     private $client;
+
+    /**
+     * @var integer
+     */
+    private $position = 0;
 
     public function __construct($stationsFeedUrl)
     {
@@ -57,6 +63,31 @@ class StationsFeed implements ArrayAccess, Countable {
     public function count()
     {
         return count($this->getStations());
+    }
+
+    public function rewind()
+    {
+        $this->position = 0;
+    }
+
+    public function current()
+    {
+        return $this->offsetGet($this->key());
+    }
+
+    public function key()
+    {
+        return $this->position;
+    }
+
+    public function next()
+    {
+        ++$this->position;
+    }
+
+    public function valid()
+    {
+        return offsetExists($this->key());
     }
 
     /**
