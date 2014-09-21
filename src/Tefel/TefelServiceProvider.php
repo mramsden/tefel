@@ -18,7 +18,7 @@ class TefelServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        $this->package('mramsden/tefel');
+        $this->package('mramsden/tefel', 'tefel');
     }
 
     /**
@@ -28,12 +28,14 @@ class TefelServiceProvider extends ServiceProvider {
      */
     public function register()
     {
+        $this->app->config->package('mramsden/tefel', realpath(__DIR__.'/../config'), 'tefel');
+
         $this->app->bindShared('tefel', function($app)
         {
             return new Tefel(
-                $app->config['tefel.stations_feed_url'],
-                $app->config['tefel.app_id'],
-                $app->config['tefel.app_key']
+                $app->config['tefel::stations_feed_url'],
+                $app->config['tefel::app_id'],
+                $app->config['tefel::app_key']
             );
         });
     }
