@@ -6,3 +6,10 @@ code_coverage:
     - clover
   output:
     clover: build/logs/clover.xml
+  blacklist:
+    - config
+    - test
+    - spec
+    - vendor
+  blacklist_files:
+    - src/Tefel/TefelServiceProvider.php

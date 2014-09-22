@@ -28,6 +28,11 @@ class StationsFeed implements ArrayAccess, Countable, IteratorAggregate {
      */
     private $client;
 
+    /**
+     * @var integer
+     */
+    private $position = 0;
+
     public function __construct($stationsFeedUrl)
     {
         $this->stationsFeedUrl = $stationsFeedUrl;
