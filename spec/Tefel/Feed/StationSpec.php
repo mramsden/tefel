@@ -35,6 +35,8 @@ class StationSpec extends ObjectBehavior
         $this->getLines()->shouldHaveCount(2);
         $this->getLines()->shouldHaveValue('District');
         $this->getLines()->shouldHaveValue('Piccadilly');
+        $this->getLines()[0]->shouldBeString();
+        $this->getLines()[1]->shouldBeString();
     }
 
     function it_returns_lines_without_serving_lines()

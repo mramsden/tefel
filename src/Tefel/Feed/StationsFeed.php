@@ -3,9 +3,10 @@
 use ArrayAccess;
 use Countable;
 use Guzzle\Http\Client;
+use IteratorAggregate;
 use SimpleXMLElement;
 
-class StationsFeed implements ArrayAccess, Countable {
+class StationsFeed implements ArrayAccess, Countable, IteratorAggregate {
 
     /**
      * @var string
@@ -57,6 +58,13 @@ class StationsFeed implements ArrayAccess, Countable {
     public function count()
     {
         return count($this->getStations());
+    }
+
+    public function getIterator()
+    {
+        foreach ($this->getStations as $key => $value) {
+            yield $key => $value;
+        }
     }
 
     /**

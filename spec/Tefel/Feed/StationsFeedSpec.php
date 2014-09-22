@@ -33,6 +33,11 @@ class StationsFeedSpec extends ObjectBehavior
         $this->shouldHaveType(StationsFeed::class);
     }
 
+    function it_is_iterable()
+    {
+        $this->shouldImplement('IteratorAggregate');
+    }
+
     function it_gets_stations()
     {
         $this->shouldHaveCount(302);

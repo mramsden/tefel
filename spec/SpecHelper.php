@@ -8,7 +8,7 @@ trait SpecHelper {
             'haveValue' => function($subject, $value)
             {
                 return in_array($value, $subject);
-            },
+            }
         ];
     }
 
