@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Tefel by mramsden</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Tefel</h1>
+        <p>A PHP package for parsing Transport for London data feeds, includes support for Laravel 4.</p>
+
+        <p class="view"><a href="https://github.com/mramsden/tefel">View the Project on GitHub <small>mramsden/tefel</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/mramsden/tefel/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mramsden/tefel/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mramsden/tefel">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>
+<a name="welcome-to-tefel" class="anchor" href="#welcome-to-tefel"><span class="octicon octicon-link"></span></a>Welcome to Tefel</h3>
+
+<p>Tefel is a PHP package for paring the Transport for London data feeds. It includes support for Laravel 4.</p>
+
+<p>Currently there is only support for extracting station facilities data and line information.</p>
+
+<p>More information about the TFL Open Data feeds can be found at <a href="https://www.tfl.gov.uk/info-for/open-data-users/">https://www.tfl.gov.uk/info-for/open-data-users/</a>.</p>
+
+<h3>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
+
+<p>Note that for this library function you will have needed to obtain access to the TFL open data feeds and been given an <code>app_id</code> and <code>app_key</code>.</p>
+
+<h4>
+<a name="plain-ol-php" class="anchor" href="#plain-ol-php"><span class="octicon octicon-link"></span></a>Plain ol' PHP</h4>
+
+<div class="highlight highlight-php"><pre><span class="nv">$tefel</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tefel</span><span class="p">(</span><span class="nv">$stationFacilitiesFeedUrl</span><span class="p">,</span> <span class="nv">$appId</span><span class="p">,</span> <span class="nv">$appKey</span><span class="p">);</span>
+<span class="sd">/** @var $stations Tefel\Feed\Station[] */</span>
+<span class="nv">$stations</span> <span class="o">=</span> <span class="nv">$tefel</span><span class="o">-&gt;</span><span class="na">getStations</span><span class="p">();</span>
+</pre></div>
+
+<h4>
+<a name="laravel-4" class="anchor" href="#laravel-4"><span class="octicon octicon-link"></span></a>Laravel 4</h4>
+
+<p>To setup Tefel with Laravel 4 it's the usual setup process as with any package.</p>
+
+<p>Add the following entries to your <em>app/config/app.php</em>:</p>
+
+<div class="highlight highlight-php"><pre><span class="s1">'providers'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+  <span class="c1">// ...</span>
+  <span class="s1">'Tefel\TefelServiceProvider'</span><span class="p">,</span>
+<span class="p">),</span>
+</pre></div>
+
+<p>A facade is available for use in Laravel 4:</p>
+
+<div class="highlight highlight-php"><pre><span class="s1">'aliases'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+  <span class="c1">// ...</span>
+  <span class="s1">'TFL'</span> <span class="o">=&gt;</span> <span class="s1">'Tefel\Facade\TefelFacade'</span><span class="p">,</span>
+<span class="p">),</span>
+</pre></div>
+
+<p>Usage is then more familiar for Laravel 4 users:</p>
+
+<div class="highlight highlight-php"><pre><span class="sd">/** @var $stations Tefel\Feed\Station[] */</span>
+<span class="nv">$stations</span> <span class="o">=</span> <span class="nx">Tefel</span><span class="o">::</span><span class="na">getStations</span><span class="p">();</span>
+</pre></div>
+
+<p>Configuration is available for the package in Laravel 4. You can publish the configuration to your application by running:</p>
+
+<pre><code>php artisan config:publish mramsden/tefel
+</code></pre>
+
+<p><strong>Configuration</strong></p>
+
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>stations_feed_url</td>
+<td>The URL to download the station facilities feed from.</td>
+</tr>
+<tr>
+<td>app_id</td>
+<td>The app id issued to you by TFL.</td>
+</tr>
+<tr>
+<td>app_key</td>
+<td>The app key issued to you by TFL.</td>
+</tr>
+</tbody>
+</table><p>Note that you don't need to change the <code>app_id</code> and <code>app_key</code> values in your own configuration file. You can also assign these values through the <code>TFL_APP_ID</code> and <code>TFL_APP_KEY</code> environment variables respectively.</p>
+
+<h3>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h3>
+
+<p>The MIT License</p>
+
+<p>Copyright (c) 2014 Marcus Ramsden.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/mramsden">mramsden</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
