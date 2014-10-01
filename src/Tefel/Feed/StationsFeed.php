@@ -67,7 +67,7 @@ class StationsFeed implements ArrayAccess, Countable, IteratorAggregate {
 
     public function getIterator()
     {
-        foreach ($this->getStations as $key => $value) {
+        foreach ($this->getStations() as $key => $value) {
             yield $key => $value;
         }
     }
