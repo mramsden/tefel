@@ -2,7 +2,8 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class TefelServiceProvider extends ServiceProvider {
+class TefelServiceProvider extends ServiceProvider
+{
 
     /**
      * Indicates if loading of the provider is deferred.

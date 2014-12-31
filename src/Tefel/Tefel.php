@@ -8,7 +8,8 @@ use Tefel\Feed\StationsFeed;
  * @author Marcus Ramsden <marcus.ramsden@gmail.com>
  * @since 0.1
  */
-class Tefel {
+class Tefel
+{
 
     /**
      * @var string

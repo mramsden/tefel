@@ -6,7 +6,8 @@ use Guzzle\Http\Client;
 use IteratorAggregate;
 use SimpleXMLElement;
 
-class StationsFeed implements ArrayAccess, Countable, IteratorAggregate {
+class StationsFeed implements ArrayAccess, Countable, IteratorAggregate
+{
 
     /**
      * @var string
@@ -24,14 +25,9 @@ class StationsFeed implements ArrayAccess, Countable, IteratorAggregate {
     private $stations;
 
     /**
-     * @var Guzzle\Http\Client
+     * @var \Guzzle\Http\Client
      */
     private $client;
-
-    /**
-     * @var integer
-     */
-    private $position = 0;
 
     public function __construct($stationsFeedUrl)
     {

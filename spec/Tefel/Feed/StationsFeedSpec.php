@@ -36,6 +36,9 @@ class StationsFeedSpec extends ObjectBehavior
     function it_is_iterable()
     {
         $this->shouldImplement('IteratorAggregate');
+        foreach ($this->getIterator() as $i => $station) {
+            $this[$i]->getName()->shouldBe($station->getName());
+        }
     }
 
     function it_gets_stations()

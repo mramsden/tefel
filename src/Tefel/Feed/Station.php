@@ -3,7 +3,8 @@
 use SimpleXMLElement;
 use stdClass;
 
-class Station {
+class Station
+{
 
     /**
      * @var SimpleXMLElement

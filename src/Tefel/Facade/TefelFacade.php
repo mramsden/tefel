@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Facade;
 
-class TefelFacade extends Facade {
+class TefelFacade extends Facade
+{
 
     public static function getFacadeAccessor() { return 'tefel'; }
 
