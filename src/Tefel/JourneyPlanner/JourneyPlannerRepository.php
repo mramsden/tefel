@@ -4,7 +4,7 @@ namespace Tefel\JourneyPlanner;
 class JourneyPlannerRepository
 {
 
-    const VALID_LINES = ["BAK", "CEN", "CIR", "DIS", "HAM", "JUB", "MET", "NTN",
+    private $validLines = ["BAK", "CEN", "CIR", "DIS", "HAM", "JUB", "MET", "NTN",
         "PIC", "VIC", "WAT", "DLR"];
 
     /**
@@ -23,7 +23,7 @@ class JourneyPlannerRepository
 
     private function checkLine($line)
     {
-        if (!in_array($line, self::VALID_LINES)) {
+        if (!in_array($line, $this->validLines)) {
             throw new UnrecognizedLineIdentifierException();
         }
     }
