@@ -6,4 +6,4 @@ dependencies:
     - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini
 test:
   override:
-    - vendor/bin/phpspec run
+    - vendor/bin/phpspec run --format junit 
