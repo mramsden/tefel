@@ -1,7 +1,7 @@
 tefel
 =====
 
-[![Circle CI](https://circleci.com/gh/mramsden/tefel/tree/master.svg?style=svg)](https://circleci.com/gh/mramsden/tefel/tree/master)
+[![Circle CI](https://img.shields.io/circleci/project/mramsden/tefel.svg)](https://circleci.com/gh/mramsden/tefel/tree/master)
 [![Code Climate](https://codeclimate.com/github/mramsden/tefel/badges/gpa.svg)](https://codeclimate.com/github/mramsden/tefel)
 [![Test Coverage](https://codeclimate.com/github/mramsden/tefel/badges/coverage.svg)](https://codeclimate.com/github/mramsden/tefel)
 
