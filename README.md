@@ -1,7 +1,7 @@
 tefel
 =====
 
-[![Build Status](https://travis-ci.org/mramsden/tefel.svg?branch=master)](https://travis-ci.org/mramsden/tefel)
+[![Circle CI](https://circleci.com/gh/mramsden/tefel/tree/master.svg?style=svg)](https://circleci.com/gh/mramsden/tefel/tree/master)
 [![Code Climate](https://codeclimate.com/github/mramsden/tefel/badges/gpa.svg)](https://codeclimate.com/github/mramsden/tefel)
 [![Test Coverage](https://codeclimate.com/github/mramsden/tefel/badges/coverage.svg)](https://codeclimate.com/github/mramsden/tefel)
 
