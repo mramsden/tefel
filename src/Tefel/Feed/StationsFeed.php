@@ -100,7 +100,7 @@ class StationsFeed implements ArrayAccess, Countable, IteratorAggregate
             $this->stations = array_map(function($stationElement)
             {
                 return new Station(new SimpleXMLElement($stationElement->asXml()));
-            }, $this->getFeed()->xpath('//station'));
+            }, $this->getFeed()->xpath('/Root/stations/station'));
         }
 
         return $this->stations;

@@ -1,6 +1,7 @@
 <?php namespace Tefel;
 
 use Illuminate\Support\ServiceProvider;
+use Tefel\JourneyPlanner\Command\ImportJourneyPlannerTimetable;
 
 class TefelServiceProvider extends ServiceProvider
 {
@@ -39,6 +40,8 @@ class TefelServiceProvider extends ServiceProvider
                 $app->config['tefel::app_key']
             );
         });
+
+        $this->commands(ImportJourneyPlannerTimetable::class);
     }
 
     /**

@@ -18,7 +18,8 @@
     "require": {
         "php": ">=5.5.0",
         "illuminate/support": "4.2.*",
-        "guzzle/guzzle": "~3.9"
+        "guzzle/guzzle": "~3.9",
+        "php-coord/php-coord": "1.1.1"
     },
     "require-dev": {
         "phpspec/phpspec": "~2.0",
